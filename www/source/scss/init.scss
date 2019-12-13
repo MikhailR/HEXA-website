@@ -1,0 +1,115 @@
+/*Подключение шрифтов*/ 
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400,600&display=swap');
+/*--------------------------------------------------------------------------------------*/ 
+
+body {
+	width:  100%; 
+	font-family: 'Open Sans', sans-serif;
+	font-size: 14px;
+	font-weight: 300;
+	line-height: 24px;
+	color: #001111;
+	overflow-x: hidden;
+}
+
+.container {
+	width: 100%;
+	background-color: #d3d3d3;
+}
+
+.section-wrap {
+	min-width: 320px;
+	max-width: 1600px;
+	margin: 0 auto;
+	background-color: #fff;
+}
+
+.content-wrap {
+	min-width: 320px;
+	max-width: 1200px;
+	margin: 0 auto;
+	padding: 0 15px;
+}
+
+.section-info {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%,-50%);
+	width: 400px;
+	text-align: center;
+	font-weight: 300;
+	h2 { 
+		font-size: 42px; 
+		line-height: 72px; 
+		letter-spacing: 4.2px;
+		@media (max-width: 480px) { font-size: 36px; line-height: 42px;}
+	}
+	p { letter-spacing: 0.7px;}
+	@media (max-width: 768px) { width: 90%;}
+}
+
+.modal {
+	display: none;
+	position: fixed;
+	top: 0%;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	width: 100vw;
+	height: 100vh;
+	background-color: rgba(0,0,0,0.7);
+	z-index: 20;
+	&__content {
+		position: fixed;
+		left: 50%;
+		top: 5%;
+		transform: translateX(-50%);
+		max-width: 80%;
+		max-height: 93%;
+		background-color: #fff;
+		box-shadow: inset 0 0 10px #000;
+		padding: 10px;
+	}
+	&__close {
+		position: absolute;
+		top: 0;
+		right: 0;
+		transform: translate(50%,-50%);
+		width: 30px;
+		height: 30px;
+		border-radius: 50%;
+		background-color: #fff;
+		box-shadow: inset 0 0 5px #000;
+		cursor: pointer;
+		transition-duration: 0.3s;
+		span { 
+			font-size: 0;
+			&::before, &::after {
+				content: '';
+				position: absolute;
+				top: 50%;
+				left: 50%;
+				width: 20px;
+				height: 2px;
+				transition-duration: 0.5s;
+				background: linear-gradient(to right, #000 0%, #fff 50%, #000 100%);
+			}
+			&::before { transform: translate(-50%,-50%) rotate(45deg);}
+			&::after { transform: translate(-50%,-50%) rotate(-45deg);}
+		}
+		&:hover, &:focus {
+			background-color: red;
+			span::before { transform: translate(-50%,-50%) rotate(225deg);}
+			span::after { transform: translate(-50%,-50%) rotate(135deg);}
+		}
+	}
+	&__image {
+		overflow: auto;
+		img {
+			display: block;
+			width: auto;
+			height: 90vh;
+		}
+	}
+}

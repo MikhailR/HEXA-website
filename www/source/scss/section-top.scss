@@ -1,0 +1,86 @@
+.top {
+	height: calc(100vh - 70px);
+	background: url('../img/top-bg.jpg') center no-repeat;
+	background-size: 100% 100%;
+	position: relative;
+	@media (max-width: 768px) { height: 500px;}
+	@media (max-width: 320px) { height: 350px;}
+	&__snow {
+		width: 100%;
+		height: 100%;
+		position: absolute;
+		left: 0;
+		top: 0;
+		animation: snowFall 60s linear infinite;
+		color: #fff;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+	}
+	&__title {
+		padding: 7px 23px;
+		letter-spacing: 1.4px;
+		background-color: #4ca2be;
+		text-transform: uppercase;
+		@media (max-width: 480px) { font-size: 12px; line-height: 18px;}
+
+	}
+	&__subtitle {
+		padding: 0 20px 10px;
+		font-size: 52px;
+		line-height: 72px;
+		letter-spacing: -2px;
+		text-align: center;
+		background-color: rgba(0,0,0,0.4);
+		@media (max-width: 992px) { font-size: 40px; line-height: 50px;}
+		@media (max-width: 480px) { font-size: 30px; line-height: 36px;}
+	}
+	&__scroll  {
+		position: absolute;
+		bottom: 0;
+		left: 50%;
+		transform: translate(-50%, 0);
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+	}
+	&__arrow {
+		display: block;
+		width: 38px;
+		height: 43px;
+		background-color: rgba(0,0,0,0.4);
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		clip-path: polygon(0% 25%, 50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%);
+		transition-duration: 0.3s;
+		&:hover, &:focus {	
+			background-color: rgba(0,0,0,0.8);
+			.top__description  {color: #fff;}
+		}
+		&:active {
+			background-color: rgba(255,255,255,0.8);
+			.top__image img {	filter: invert(1);}
+		}
+		@media (max-width: 768px) { width: 30px; height: 35px;}
+	}
+	&__image {
+		display: block;
+		width: 16px;
+		height: 10px;
+		img {
+			display: block;
+			width: 100%;
+			height: 100%;
+		}
+	}
+	&__description {
+		letter-spacing: 1.4px;
+		color: rgba(255,255,255,0.4);
+		margin: 10px 0 22px;
+		animation: arrowPulse 2s infinite;
+		@media (max-width: 768px) { margin: 5px 0 10px;}
+	}
+}

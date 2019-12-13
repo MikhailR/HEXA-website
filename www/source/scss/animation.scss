@@ -1,0 +1,26 @@
+@keyframes snowFall {
+	0% {
+		background: url('../img/snow1.png') center bottom no-repeat,
+								url('../img/snow2.png') center top no-repeat;
+		background-size: 100% auto, 100% auto;
+		background-position: center 0,	center -1200px;
+	}
+	50% {
+		background: url('../img/snow1.png') center bottom no-repeat,
+								url('../img/snow2.png') center top no-repeat;
+		background-size: 100% auto, 100% auto;
+		background-position: center 600px, center -600px;
+	}
+	100% {
+		background: url('../img/snow1.png') center bottom no-repeat,
+								url('../img/snow2.png') center top no-repeat;
+		background-size: 100% auto,	100% auto;
+		background-position: center 1200px, center 0;
+	}
+}
+
+@keyframes arrowPulse {
+	0% { color: rgba(255,255,255,0.4); }
+	50% { color: rgba(255,255,255,1); }
+	100% { color: rgba(255,255,255,0.4); }
+}
