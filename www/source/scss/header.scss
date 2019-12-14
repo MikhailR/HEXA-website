@@ -13,6 +13,7 @@
 		position: fixed;
 		top: 0;
 		background-color: rgba(255,255,255,0.7);
+		z-index: 50;
 		.header__link--active { color: #001111;}
 	}
 	&__wrap {
@@ -105,7 +106,7 @@
 			z-index: 20;
 			padding: 10px 20px;
 			@media (max-width: 480px) { width: 90%; left: 50%; transform: translateX(-50%);}
-			&--active {	height: 250px; opacity: 1;}
+			&--active {	height: 250px; opacity: 1; z-index: 50;}
 		}
 		&__link {
 			text-transform: uppercase;
